@@ -10,7 +10,7 @@ const existeEmail = async (req = request, res = response, next) => {
     if (existe) {
       return res.status(401).json({
         success: false,
-        error: ` El Correo ${email}, ya esta registrado. `
+        msg: ` El Correo ${email}, ya esta registrado. `
       });
     }
 
@@ -24,7 +24,7 @@ const existeEmail = async (req = request, res = response, next) => {
 
     return res.status(500).json({
       success: false,
-      error: ` Se ha producido un error inesperado.  Server error: 500`
+      msg: ` Se ha producido un error inesperado.  Server error: 500`
     });
   }
 
