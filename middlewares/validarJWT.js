@@ -11,7 +11,7 @@ const validarJWT = async (req = request, res = response, next) => {
   if (!token) {
     return res.status(401).json({
       success: false,
-      error: ` Operación denegada. `
+      msg: ` Operación denegada. `
     });
   }
 
@@ -27,7 +27,7 @@ const validarJWT = async (req = request, res = response, next) => {
     if (!usuario) {
       return res.status(401).json({
         success: false,
-        error: `Operación denegada.  `
+        msg: `Operación denegada.  `
       });
     }
 
@@ -45,7 +45,7 @@ const validarJWT = async (req = request, res = response, next) => {
 
     return res.status(401).json({
       success: false,
-      error: ` Error: Intenta cerrar la sesión y volver a ingresar a tu cuenta, asegurándote de cerrar completamente la aplicación. `
+      msg: ` Error: Intenta cerrar la sesión y volver a ingresar a tu cuenta, asegurándote de cerrar completamente la aplicación. `
     });
   }
 }
