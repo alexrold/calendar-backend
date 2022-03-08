@@ -25,8 +25,9 @@ const EventoSchema = new Schema({
 });
 
 EventoSchema.methods.toJSON = function () {
-  const { _id, __v, ...object } = this.toObject();
+  const { _id, __v, created_by, ...object } = this.toObject();
   object.id = _id;
+  object.user = created_by;
   return object;
 };
 
