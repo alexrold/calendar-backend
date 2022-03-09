@@ -63,7 +63,7 @@ const nuevoEvento = async (req, res = response) => {
 
     return res.status(500).json({
       success: false,
-      error: ` Se ha producido un error inesperado.  Server error: 500`
+      msg: ` Se ha producido un error inesperado.  Server error: 500`
     });
   }
 }
@@ -81,7 +81,7 @@ const actualizarEvento = async (req, res = response) => {
     if (!evento) {
       return res.status(404).json({
         success: false,
-        error: ` La información solicitada, no existe. `
+        msg: ` La información solicitada, no existe. `
       });
     }
 
@@ -89,7 +89,7 @@ const actualizarEvento = async (req, res = response) => {
     if (uid.toString() !== evento.created_by.toString()) {
       return res.status(401).json({
         success: false,
-        error: `Operación denegada. No tienes los privilegios para editar este evento. `
+        msg: `Operación denegada. No tienes los privilegios para editar este evento. `
       });
     }
 
@@ -116,7 +116,7 @@ const actualizarEvento = async (req, res = response) => {
 
     return res.status(500).json({
       success: false,
-      error: ` Se ha producido un error inesperado.  Server error: 500`
+      msg: ` Se ha producido un error inesperado.  Server error: 500`
     });
   }
 }
@@ -135,7 +135,7 @@ const eliminarEvento = async (req, res = response) => {
     if (!evento) {
       return res.status(404).json({
         success: false,
-        error: ` La información solicitada, no existe. `
+        msg: ` La información solicitada, no existe. `
       });
     }
 
@@ -143,7 +143,7 @@ const eliminarEvento = async (req, res = response) => {
     if (uid.toString() !== evento.created_by.toString()) {
       return res.status(401).json({
         success: false,
-        error: `Operación denegada. No tienes los privilegios para eliminar este evento. `
+        msg: `Operación denegada. No tienes los privilegios para eliminar este evento. `
       });
     }
 
@@ -163,7 +163,7 @@ const eliminarEvento = async (req, res = response) => {
 
     return res.status(500).json({
       success: false,
-      error: ` Se ha producido un error inesperado.  Server error: 500`
+      msg: ` Se ha producido un error inesperado.  Server error: 500`
     });
   }
 }
